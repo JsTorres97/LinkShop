@@ -12,11 +12,22 @@
                     <li><a href="../PHP/register.php">Nueva Cuenta</a>
                     </li>
                     <li><a href="./../contact.html"><?php
-                        session_start();
-                        echo $_SESSION['CORREO']; 
+                    
+                            session_start();
+                        echo $_SESSION['NOMBRE'];
+                        echo " ";
+                        echo $_SESSION['APELLIDO'];
+                        
                         ?></a>
                     </li>
-                    <li><a href="#">Recently viewed</a>
+                    <li><a href="../PHP/cerrarsesion.php"><?php 
+                        if($_SESSION['TIPO_USUARIO']=='comprador'){
+                            echo "Cerrar sesión";
+                        }else{
+                            echo "";
+                        }
+                        ?>
+                    </a>
                     </li>
                 </ul>
             </div>

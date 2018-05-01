@@ -18,6 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($row['TIPO_USUARIO']=='ADMIN'){
             session_start();
+        $_SESSION['ID'] = $row['ID_USUARIOS'];
         $_SESSION['NOMBRE'] = $row['NOMBRE'];
         $_SESSION['APELLIDO'] = $row['APELLIDO'];
         $_SESSION['CONTRA'] = $row['CONTRA'];
@@ -30,6 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: admin.php");
         }else{
             session_start();
+        $_SESSION['ID'] = $row['ID_USUARIOS'];
         $_SESSION['NOMBRE'] = $row['NOMBRE'];
         $_SESSION['APELLIDO'] = $row['APELLIDO'];
         $_SESSION['CONTRA'] = $row['CONTRA'];

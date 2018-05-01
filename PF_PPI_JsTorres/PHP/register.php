@@ -37,7 +37,7 @@
     include("./../formatos/style2.html");
     ?>
    
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="../favicon.png">
 
 
 
