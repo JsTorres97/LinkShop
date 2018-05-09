@@ -143,9 +143,41 @@
                                         <input type="text" class="form-control" name="origen">
                                     </div>
                                 </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="categoria">Categoria</label><br>
+                                        <select class="select" name="categoria">
+                                        <?php
+                                            include("conexion.php");
+                                            $res=mysqli_query($con,"SELECT * FROM  categoria");
+                                            while($row = mysqli_fetch_array($res)){
+                                                echo '<option value="'.$row['NOMBRE'].'">'.$row['NOMBRE'].'</option>';
+                                                
+                                            }
+
+                                        ?>
+                                         </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="form-group">
+                                        <label for="Tipo">Tipo</label><br>
+                                        <select class="select" name="tipo">
+                                        <?php
+                                            include("conexion.php");
+                                            $res=mysqli_query($con,"SELECT * FROM  tipo");
+                                            while($row = mysqli_fetch_array($res)){
+                                                echo '<option value="'.$row['NOMBRE'].'">'.$row['NOMBRE'].'</option>';
+                                                
+                                            }
+
+                                        ?>
+                                         </select>
+                                    </div>
+                                </div>
                           
                                 <div class="col-sm-12 text-center">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>Agregar Producto</button>
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-plus-square-o"></i>Agregar Producto</button>
 
                                 </div>
                             </div>

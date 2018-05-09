@@ -120,6 +120,7 @@
                             echo "<th>MARCA</th>";
                             echo "<th>ORIGEN</th>";
                             echo "<th>CATEGORIA</th>";                            
+                            echo "<th>TIPO</th>";                            
                         echo "</tr>";
                         
                         while($row=mysqli_fetch_array($res)){
@@ -134,7 +135,7 @@
                                 echo $row['DESCRIPCION'];
                             echo "</td>";
                             echo "<td>";
-                                echo '<img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN'] ).'" height="100" width="200"/>';
+                                echo '<img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN'] ).'" height="100" width="125"/>';
                             echo "</td>";
                             echo "<td>";
                                 echo "$";
@@ -151,6 +152,9 @@
                             echo "</td>";
                             echo "<td>";
                                 echo $row['CATEGORIA'];
+                            echo "</td>";
+                            echo "<td>";
+                                echo $row['TIPO'];
                             echo "</td>";
                             echo "</tr>";                                                                                                                                                                                                  
                         }

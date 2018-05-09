@@ -28,17 +28,18 @@
                         ?>
                         </a>
                     </li>
-                    <li><a href="./../contact.html"><?php
+                    <li style="color:white"><?php
                    
                         
                         if(!empty($_SESSION)){
+                        echo "Bienvenido ";
                         echo $_SESSION['NOMBRE'];
                         echo " ";
                         echo $_SESSION['APELLIDO'];                      
                         }else{
                             echo "";
                         }
-                        ?></a>
+                        ?>
                    </li>
                     <li><a href='../PHP/cerrarsesion.php'>
                     <?php

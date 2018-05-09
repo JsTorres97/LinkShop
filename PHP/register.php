@@ -89,8 +89,32 @@
 
                     $nomErr = $apeErr = $corrErr = $fechaErr = $tarErr = $dirErr = $passErr = "";
                     $name = $lastn = $corr = $fecha = $numtar = $dir = $pass = "";
-
+                    include("conexion.php");
+                    $control = 0;
                     if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                        function test_input($data) {
+                            $data = trim($data);
+                            $data = stripslashes($data);
+                            $data = htmlspecialchars($data);
+                            return $data;
+                          }
+
+                    /*      function existe_mail($mail){
+                               
+                            $verifica = mysqli_query($con, "SELECT * FROM usuarios WHERE CORREO = $mail");
+                            $pasando = mysqli_fetch_array($verifica);
+
+                            if(empty($pasando)){
+                                return true;
+                            }else{
+                                return false;
+                            }
+                          }*/
+
+                        if(isset($_POST['crear'])){
+
+                        
 
                         if(empty($_POST["nombre"])){
                             $nameErr = "Nombre obligatorio";
@@ -113,10 +137,18 @@
                         if(empty($_POST["correo"])){
                             $corrErr = "Correo electrónico";
                         }else{
+                            //$pasa = existe_mail($_POST["correo"]);
+                            //if($pasa==true){
+
+                            
                             $corr = test_input($_POST["correo"]);
                             if(!filter_var($corr, FILTER_VALIDATE_EMAIL)){
                                 $corrErr = "Formato de correo invalido";
-                            }
+                            //}
+                        }//else{
+                           //     $control=3;
+                                
+                            //}
                         }
 
                         if(empty($_POST["fecha"])){
@@ -148,14 +180,45 @@
                         }else{
                             $pass = test_input($_POST["paswd"]);
                         }
+                    
+
+                    
+
+                      
+
+                      $nom = $_POST['nombre'] ?? "";
+                      $ape = $_POST['apellido'] ?? "";
+                      $mail = $_POST['correo'] ?? "";
+                      $pass = $_POST['paswd'] ?? "";
+                      $date = $_POST['fecha'] ?? "";
+                      $num = $_POST['tarjeta'] ?? "";
+                      $dir = $_POST['ship'] ?? "";
+                      $usuario = "comprador";
+                      
+                      
+                      
+                      if(!empty($nom) && !empty($pass)){
+
+                      
+                      $sql = "INSERT INTO usuarios(NOMBRE, APELLIDO, CORREO, CONTRA, FECHA_NACIMIENTO, NUM_TARJETA, DIRECCION, TIPO_USUARIO) VALUES('$nom', '$ape', '$mail', '$pass', '$date', '$num', '$dir', '$usuario');";
+                      $insertar = mysqli_query($con,$sql);
+                      $control=1;
+                      
+
+
+                       $name = $lastn = $corr = $fecha = $numtar = $dir = $pass = "";
+                      $usuario = "comprador";
+                      
+                        }else{
+                            $control=2;
+                        }
+
+
                     }
 
-                    function test_input($data) {
-                        $data = trim($data);
-                        $data = stripslashes($data);
-                        $data = htmlspecialchars($data);
-                        return $data;
-                      }
+
+
+                    }
 
                 ?>
 
@@ -164,12 +227,33 @@
                 <div class="col-md-6">
                     <div class="box">
                         <h1>Nueva cuenta</h1>
+                        <?php
+                        if($control==0){
+                            echo "";
+                        }else if($control==1){
+                            echo "<div class='alert alert-success'>
+                            <strong>Usuario Creado, Favor de entrar a su cuenta</strong>
+                          </div>";
+                          $control=0;
+                        }else if($control==2){
+                            echo "<div class='alert alert-danger'>
+                            <strong>Hay un error, intente de nuevo</strong> 
+                          </div>";
+                          $control=0;
+                        }else if($control==3){
+                            echo "<div class='alert alert-danger'>
+                            <strong>Correo electrónico ya registrado</strong> 
+                          </div>";
+                          $control=0;
+                        }
+
+                 ?>
 
                         <p class="lead">¿Eres nuevo en Dunkers? Crea una cuenta y forma parte de Dunkers.</p>
                         
                         <hr>
 
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                        <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" class="form-control" name="nombre" value="<?php echo $name; ?>">
@@ -177,19 +261,23 @@
                             </div>
                             <div class="form-group">
                                 <label for="apellido">Apellido</label>
-                                <input type="text" class="form-control" name="apellido">
+                                <input type="text" class="form-control" name="apellido" value="<?php echo $lastn; ?>">
+                                <span class="error">*<?php $apeErr;?></span>
                             </div>
                             <div class="form-group">
                                 <label for="correo">Correo eletrónico</label>
-                                <input type="email" class="form-control" name="correo">
+                                <input type="email" class="form-control" name="correo" value="<?php echo $corr; ?>">
+                                <span class="error">*<?php $corrErr;?></span>
                             </div>
                             <div class="form-group">
                                 <label for="fecha">Fecha de nacimiento</label>
-                                <input type="date" class="form-control" name="fecha">
+                                <input type="date" class="form-control" name="fecha" value="<?php echo $fecha; ?>">
+                                <span class="error">*<?php $fechaErr;?></span>
                             </div>
                             <div class="form-group" id="card-number-field">
                                     <label for="cardNumber">Número de tarjeta</label>
-                                    <input type="number" class="form-control" name="tarjeta">
+                                    <input type="number" class="form-control" name="tarjeta" value="<?php echo $numtar; ?>">
+                                    <span class="error">*<?php $tarErr;?></span>
                             </div>
                             <div class="form-group" id="credit_cards">
                                     <img src="./../img/visa.jpg" id="visa">   
@@ -198,22 +286,30 @@
                             </div>
                             <div class="form-group">
                                     <label for="ship">Dirección</label>
-                                    <input type="text" class="form-control" name="ship">
+                                    <input type="text" class="form-control" name="ship" value="<?php echo $dir; ?>">
+                                    <span class="error">*<?php $dirErr;?></span>
                             </div>
                             <div class="form-group">
                                     <label for="passwd">Contraseña</label>
-                                    <input type="password" class="form-control" name="paswd">
+                                    <input type="password" class="form-control" name="paswd" value="<?php echo $pass; ?>">
+                                    <span class="error">*<?php $passErr;?></span>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i>Crear cuenta de Dunkers</button>
+                                <button type="submit" class="btn btn-primary" name="crear"><i class="fa fa-user-md"></i>Crear cuenta de Dunkers</button>
                             </div>
+                       
                         </form>
                     </div>
                 </div>
                 <!--Iniciar sesion-->
+
+                        
+
+
                 <div class="col-md-6">
                     <div class="box">
                         <h1>Entrar</h1>
+                        
 
                         <p class="lead">¿Ya eres Dunker? Inicia sesión.</p>
 
@@ -229,7 +325,7 @@
                                 <input type="password" class="form-control" name="passwd">
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i>Iniciar sesión</button>
+                                <button type="submit" class="btn btn-primary" name="entrar"><i class="fa fa-sign-in"></i>Iniciar sesión</button>
                             </div>
                         </form>
                     </div>

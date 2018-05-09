@@ -20,21 +20,16 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
 
     <!-- styles -->
-    <link href="../css/font-awesome.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/animate.min.css" rel="stylesheet">
-    <link href="../css/owl.carousel.css" rel="stylesheet">
-    <link href="../css/owl.theme.css" rel="stylesheet">
+  <?php include("../formatos/style.html")
+  ?>
 
     <!-- theme stylesheet -->
-    <link href="../css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
     <!-- your stylesheet with modifications -->
-    <link href="../css/custom.css" rel="stylesheet">
+    <?php include("../formatos/style2.html");
+    ?>
 
-    <script src="../js/respond.min.js"></script>
-
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="../favicon.png">
 
 
 
@@ -150,23 +145,26 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.html">
+                                            
                                                 <img src="../img/product1.jpg" alt="" class="img-responsive">
-                                            </a>
+                                            
                                         </div>
                                         <div class="back">
-                                            <a href="detail.html">
+                                            
                                                 <img src="../img/product1_2.jpg" alt="" class="img-responsive">
-                                            </a>
+                                            
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
+                                
                                     <img src="../img/product1.jpg" alt="" class="img-responsive">
-                                </a>
+                                
                                 <div class="text">
-                                    <h3><a href="detail.html">LeBron XV "Multi-Color"</a></h3>
+                                    <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="16">
+                                     <button type="submit" class="btn-link" align="center"><h3>LeBron XV "Multi-Color"</h3></button>
                                     <p class="price">$3,999.00</p>
+                                    </form>
                                 </div>
                                 <!-- /.text -->
                             </div>
@@ -193,8 +191,12 @@
                                     <img src="../img/product2.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Jordan Fly Unlimited</a></h3>
-                                    <p class="price"><del>$3,200.00</del> $2,299.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="17">
+                                     <button type="submit" class="btn-link" align="center"><h3>Jordan Fly Unlimited</h3></button>
+                                     <p class="price"><del>$3,200.00</del> $2,299.00</p>
+                                </form>
+                                    
                                 </div>
                                 <!-- /.text -->
 
@@ -202,19 +204,7 @@
                                     <div class="theribbon">OFERTA</div>
                                     <div class="ribbon-background"></div>
                                 </div>
-                                <!-- /.ribbon -->
-
-                               <!-- <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
-
-                                <!--<div class="ribbon gift">
-                                    <div class="theribbon">GIFT</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
+                               
                             </div>
                             <!-- /.product -->
                         </div>
@@ -239,8 +229,12 @@
                                     <img src="../img/product3.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Air Jordan XXXII "Free Throw Line"</a></h3>
-                                    <p class="price">$3,699.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="18">
+                                     <button type="submit" class="btn-link" align="center"><h3>Air Jordan XXXII "Free Throw Line"</h3></button>
+                                     <p class="price">$3,699.00</p>
+                                </form>
+                                    
                                 </div>
                                 <!-- /.text -->
                             </div>
@@ -267,8 +261,12 @@
                                     <img src="../img/product4.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Jordan DNA</a></h3>
-                                    <p class="price">$2,099.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="19">
+                                     <button type="submit" class="btn-link" align="center"><h3>Jordan DNA</h3></button>
+                                     <p class="price">$2,099.00</p>
+                                </form>
+                                    
                                 </div>
                                 <!-- /.text -->
                             </div>
@@ -295,8 +293,11 @@
                                     <img src="../img/product5.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">PG 2 "March Madness"</a></h3>
-                                    <p class="price">$2,299.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="20">
+                                     <button type="submit" class="btn-link" align="center"><h3>PG 2 "March Madness"</</h3></button>
+                                     <p class="price">$2,099.00</p>
+                                </form>
                                 </div>
                                 <!-- /.text -->
 
@@ -329,8 +330,12 @@
                                     <img src="../img/product6.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">LeBron Witness II</a></h3>
-                                    <p class="price">$2,099.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="21">
+                                     <button type="submit" class="btn-link" align="center"><h3>LeBron Witness II</h3></button>
+                                     <p class="price">$2,099.00</p>
+                                </form>
+                                  
                                 </div>
                                 <!-- /.text -->
 
@@ -365,8 +370,11 @@
                                     <img src="../img/product7.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Kyrie 4 “City of Guardians” </a></h3>
-                                    <p class="price"><del>$2,800.00</del> $2,499.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="14">
+                                     <button type="submit" class="btn-link" align="center"><h3>Kyrie 4 “City of Guardians”</h3></button>
+                                     <p class="price"><del>$2,800.00</del> $2,499.00</p>
+                                </form>
                                 </div>
                                 <!-- /.text -->
 
@@ -380,13 +388,7 @@
                                     <div class="theribbon">LO MÁS NUEVO</div>
                                     <div class="ribbon-background"></div>
                                 </div>
-                                <!-- /.ribbon 
-
-                                <div class="ribbon gift">
-                                    <div class="theribbon">CLÁSICO</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
-                                <!-- /.ribbon -->
+                            
                             </div>
                             <!-- /.product -->
                         </div>
@@ -411,8 +413,12 @@
                                     <img src="../img/product8.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Jordan Trainer 2 Flyknit</a></h3>
-                                    <p class="price">$2,899.00</p>
+                                <form action="detail.php" method="GET">
+                                    <input name="id" type="hidden" value="23">
+                                     <button type="submit" class="btn-link" align="center"><h3>Jordan Trainer 2 Flyknit</h3></button>
+                                     <p class="price">$2,899.00</p>
+                                </form>
+                                    
                                 </div>
                                 <!-- /.text -->
                             </div>
@@ -431,89 +437,18 @@
 
             <!-- *** GET INSPIRED ***
  _________________________________________________________ -->
-            <div class="container" data-animate="fadeInUpBig">
-                <div class="col-md-12">
-                    <div class="box slideshow">
-                        <h3>Get Inspired</h3>
-                        <p class="lead">Get the inspiration from our world class designers</p>
-                        <div id="get-inspired" class="owl-carousel owl-theme">
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired1.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired2.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <img src="img/getinspired3.jpg" alt="Get inspired" class="img-responsive">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- *** GET INSPIRED END *** -->
 
             <!-- *** BLOG HOMEPAGE ***
  _________________________________________________________ -->
 
-            <div class="box text-center" data-animate="fadeInUp">
-                <div class="container">
-                    <div class="col-md-12">
-                        <h3 class="text-uppercase">From our blog</h3>
-
-                        <p class="lead">What's new in the world of fashion? <a href="blog.html">Check our blog!</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-
-                <div class="col-md-12" data-animate="fadeInUp">
-
-                    <div id="blog-homepage" class="row">
-                        <div class="col-sm-6">
-                            <div class="post">
-                                <h4><a href="post.html">Fashion now</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a>
-                                </p>
-                                <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="post">
-                                <h4><a href="post.html">Who is who - example blog post</a></h4>
-                                <p class="author-category">By <a href="#">John Slim</a> in <a href="">About Minimal</a>
-                                </p>
-                                <hr>
-                                <p class="intro">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-                                    ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                                <p class="read-more"><a href="post.html" class="btn btn-primary">Continue reading</a>
-                                </p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <!-- /#blog-homepage -->
-                </div>
-            </div>
+          
             <!-- /.container -->
 
             <!-- *** BLOG HOMEPAGE END *** -->
 
 
-        </div>
         <!-- /#content -->
 
         <!-- *** FOOTER ***

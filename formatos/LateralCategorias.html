@@ -1,0 +1,88 @@
+<div class="panel panel-default sidebar-menu">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Dunkers</h3>
+        </div>
+        <?php
+        include("conexion.php");
+            $sql2 = "SELECT * FROM productos WHERE CATEGORIA='Hombre'";
+            $sql3 = "SELECT * FROM productos WHERE CATEGORIA='Mujer'";
+
+            //$sql2=mysqli_query($con, "SELECT count(ID_PRODUCTOS) FROM productos WHERE CATEGORIA=Hombre");
+            
+            $result=mysqli_query($con,$sql2);
+            $result2=mysqli_query($con,$sql3);
+            
+            // Return the number of rows in result set
+            $rowcount=mysqli_num_rows($result);
+            $rowcount2=mysqli_num_rows($result2);
+            
+            
+        ?>
+        <div class="panel-body">
+            <ul class="nav nav-pills nav-stacked category-menu">
+                <li>
+                    <a>Hombre<span class="badge pull-right"><?php echo $rowcount; ?></span></a>
+                    <ul>
+                        <li>
+                            <form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Calzado">
+                                <input type="hidden" name="Genero" value="Hombre">
+                                <button type="submit" class="btn btn-primary" align="center">Calzado</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Playeras">
+                                <input type="hidden" name="Genero" value="Hombre">
+                                <button type="submit" class="btn btn-primary" align="center">Playeras</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Sudaderas">
+                                <input type="hidden" name="Genero" value="Hombre">
+                                <button type="submit" class="btn btn-primary" align="center">Sudaderas</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Gorras">
+                                <input type="hidden" name="Genero" value="Hombre">
+                                <button type="submit" class="btn btn-primary" align="center">Gorras</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Mujeres <span class="badge pull-right"><?php echo $rowcount2; ?></span></a>
+                    <ul>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Calzado">
+                                <input type="hidden" name="Genero" value="Mujer">
+                                <button type="submit" class="btn btn-primary" align="center">Calzado</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Playeras">
+                                <input type="hidden" name="Genero" value="Mujer">
+                                <button type="submit" class="btn btn-primary" align="center">Playeras</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Sudaderas">
+                                <input type="hidden" name="Genero" value="Mujer">
+                                <button type="submit" class="btn btn-primary" align="center">Sudaderas</button>
+                            </form>
+                        </li>
+                        <li><form action="category.php" method="GET">
+                                <input type="hidden" name="Tipo" value="Gorras">
+                                <input type="hidden" name="Genero" value="Mujer">
+                                <button type="submit" class="btn btn-primary" align="center">Gorras</button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+               
+
+            </ul>
+
+        </div>
+    </div>

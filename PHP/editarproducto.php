@@ -129,6 +129,7 @@
                                 $nom = $valores['NOMBRE'];
                                 $precio = $valores['PRECIO'];
                                 $cantidad = $valores['EXISTENCIA'];
+                                $pic = $valores['IMAGEN'];
                             
                         }
                         ?>
@@ -158,9 +159,24 @@
                         if(empty($nom)){
                             echo "";
                         }else{
+                            echo "<table class='table'>";
+                            echo "<tr>";
+                            echo "<td>";
                             echo $nom;
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo '<img src="data:img/productos/png;base64,'.base64_encode($pic).'" height="100" width="200"/>';
+                            echo "</td>";
+                            echo "</tr>";
+                            echo "</table>";
                         }
                         ?></h2>
+                        <?php
+                           
+
+                        ?>
+                        
                         <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
                             <div class="row">
                                 <div class="col-sm-6">
