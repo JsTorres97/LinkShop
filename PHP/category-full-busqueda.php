@@ -94,10 +94,15 @@
                                             <div class="flip-container">
                                                 <div class="flipper">
                                                     <div class="front">
-                                                   <a>
-                                                        <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="250" width="425" class="img-responsive"/>
-                                                    </a>
-                                                    </div>
+                                                    <a>
+                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="250" width="425" class="img-responsive"/>
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a>
+                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="250" width="425" class="img-responsive"/>
+                                            </a>
+                                        </div>
                                                 </div>
                                             </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                                      

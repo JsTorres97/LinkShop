@@ -131,33 +131,33 @@
                                 $id_usuario=$_SESSION['ID'];
                                 $sql = "INSERT INTO carrito(ID_USUARIO_C, ID_PRODUCTO_C, CANTIDAD) VALUES($id_usuario, $prod, $cant);";
                                 $insertar = mysqli_query($con,$sql);
-                                echo $sql."";
+                                
+                                
                         }
                     }
                         ?>
 
                                 <p class="text-center buttons">
-                                    <?php 
+                                    <?php
+                                    if(!empty($_SESSION)){
+
+                                    
                                     if($cantidad>0){?>
-                                    <!--echo '<div align="center">';
-                                    echo '<form action=';$_SERVER["PHP_SELF"];
-                                    echo ' method="POST">
-                                            <input type="hidden" name="producto" value='.$num_prod.'>
-                                            <input type="hidden" name="cantidad" value="1">
-                                            <button type="submit" name="agregar" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Añadir al carritos</button>
-                                        </form>';
-                                    echo "</div>";-->
+                                   
                                     <div align="center">
                                     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
-                                            <input type="hidden" name="producto" value="<?php $num_prod; ?>">
+                                            <input type="hidden" name="producto" value="<?php echo $num_prod; ?>">
                                             <input type="hidden" name="cantidad" value="1">
-                                            <button type="submit" name="agregar" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Añadir al carritos</button>
+                                            <button type="submit" name="agregar" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Añadir al carrito</button>
                                     </form>
                                     </div>
                                     <?php
                                     }else{
                                         echo "No hay en existencia en este momento";
                                     }
+                                }else{
+                                        echo '<div align="center"><p class="alert alert-danger">Por favor inicia sesión o crea una cuenta para poder comprar </p></div>';
+                                }
                                     ?>
                                 </p>
 

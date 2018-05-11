@@ -152,21 +152,35 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">
+                    <?php if(!empty($_SESSION)){
+
+                echo '<a  href="carrito.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">';
+                                        }?>
+              
+
+                    
                     <?php
-                             if(!empty($_SESSION)){
+                            if(!empty($_SESSION)){
                             $id=$_SESSION['ID'];
                             $numprod = "SELECT * FROM carrito WHERE ID_USUARIO_C ='$id'";
                             $consulta = mysqli_query($con, $numprod);
                             if($row=mysqli_fetch_array($consulta)){
+                                
                                 $cuenta=mysqli_num_rows($consulta);
-                                echo "$cuenta artículos en el carrito";
+                                echo $cuenta." artículos en el carrito";
+                                
+                                
                             }else{
                                 echo "0 artículos en el carrito";
+                                
+                                
                             }
+                        }else{
+                            
                         }
                         ?>
-                    </span></a>
+                        </span></a>
+                    
                 </div>
                 <!--/.nav-collapse -->
 
@@ -185,7 +199,7 @@
                 <p><h5>Nombre de producto:</h5></p>
                     <div class="input-group">
                         
-                        <input type="text" class="form-control" placeholder="Search" name="buscar">
+                        <input type="text" class="form-control" placeholder="Buscar" name="buscar">
                         <span class="input-group-btn">
 
 			<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
