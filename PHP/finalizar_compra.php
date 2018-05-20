@@ -59,7 +59,7 @@
                     while($hist=mysqli_fetch_array($carrito)){
                         $idprod = $hist['ID_PRODUCTO_C'];
                         $cant = $hist['CANTIDAD'];
-                        $inserthist = mysqli_query($con, "INSERT INTO historial(ID_PRODUCTO_H, ID_USUARIO_H, TICKET, CANTIDAD) VALUES('$idprod', '$id_usuario', '$ticket','$cant')");
+                        $inserthist = mysqli_query($con, "INSERT INTO historial(ID_PRODUCTO_H, ID_USUARIO_H, TICKET, CANTIDAD, ESTADO) VALUES('$idprod', '$id_usuario', '$ticket','$cant', '1')");
                             $producto=mysqli_query($con, "SELECT * FROM productos WHERE ID_PRODUCTOS=$idprod");
                                 while($rowproducto=mysqli_fetch_array($producto)){
                                     $nuevacantidad = $rowproducto['EXISTENCIA']-$cant;

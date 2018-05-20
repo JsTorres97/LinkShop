@@ -51,6 +51,17 @@
                     ?>
                     </a>
                     </li>
+                    <?php
+                    if(!empty($_SESSION)){
+                        if($_SESSION['TIPO_USUARIO']=='ADMIN'){
+                            echo '<li><a href="../PHP/admin.php">Administración</a></li>';
+                        }else{
+                            echo "";
+                        }
+                    }else{
+                        echo "";
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
