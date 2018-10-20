@@ -1,6 +1,6 @@
 <?php
     // Crear una conexión
-    $con = mysqli_connect("localhost","root","","db_pf_ppi");
+    $con = mysqli_connect("localhost","root","","LinkShop");
 
     // Check connection
     if (mysqli_connect_errno()) {
