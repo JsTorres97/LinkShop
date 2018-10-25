@@ -10,6 +10,7 @@
     <meta name="description" content="Obaju e-commerce template">
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 
     <title>
         Dunkers
@@ -84,7 +85,8 @@
                    
                     <div class="row products">
                    <?php
-                       
+                    header("Content-Type: text/html;charset=utf-8");
+                    mysqli_query("SET NAMES 'utf8'");
                        $prductos=mysqli_query($con,"SELECT * FROM productos WHERE CATEGORIA='$gen' AND TIPO='$tipo'");
                        while($row=mysqli_fetch_array($prductos)){
                         echo ' 

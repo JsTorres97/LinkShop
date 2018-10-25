@@ -1,6 +1,6 @@
 <?php
     // Crear una conexión
-    $con = mysqli_connect("localhost","root","","LinkShop");
+    $con = mysqli_connect("localhost","root","root2018","LinkShop");
 
     // Check connection
     if (mysqli_connect_errno()) {
