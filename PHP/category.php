@@ -94,19 +94,19 @@
                                         <div class="product">
                                    
                                             <div class="flip-container">
-                                                <div class="flipper">
-                                                    <div class="front">
+                                              <div class="flipper">
+                                                    <!--<div class="front">-->
                                                     <a>
-                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="250" width="425" class="img-responsive"/>
+                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="400" width="253" />
                                             </a>
-                                        </div>
-                                        <div class="back">
+                                        <!--</div>-->
+                                       <!-- <div class="back">
                                             <a>
-                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="250" width="425" class="img-responsive"/>
+                                            <img src="data:img/productos/png;base64,'.base64_encode($row['IMAGEN']).'" height="400" width="425" class="img-responsive"/>
                                             </a>
-                                        </div>
+                                        </div>-->
                                                 </div>
-                                            </div><br><br><br><br><br><br><br><br><br><br><br><br>
+                                            </div>
                                      
                                       
                                             <div class="text">
