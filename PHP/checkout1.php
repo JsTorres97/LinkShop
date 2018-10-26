@@ -11,6 +11,7 @@
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
     <script type="../js/misscripts.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <title>
         Dunkers

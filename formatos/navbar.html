@@ -209,11 +209,18 @@
             <div class="navbar-buttons">
 
                 <div class="navbar-collapse collapse right" id="basket-overview">
+                    
                     <?php if(!empty($_SESSION)){
 
-                echo '<a  href="carrito.php" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">';
+                echo '<div id="c1"><a  href="carrito.php" class="btn btn-primary navbar-btn" id="carro"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">';
                                         }?>
-              
+              <script>
+                    $(document).ready(function() {
+                        var refreshId =  setInterval( function(){
+                        $('c1').load('navbar.html');//actualizas el div
+                    }, 1000 );
+                    });
+                    </script>
 
                     
                     <?php
@@ -237,6 +244,7 @@
                         }
                         ?>
                         </span></a>
+                    </div>
                     
                 </div>
                 <!--/.nav-collapse -->

@@ -10,6 +10,7 @@
     <meta name="description" content="Obaju e-commerce template">
     <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
     <meta name="keywords" content="">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <title>
         Obaju : e-commerce template
